@@ -1,0 +1,68 @@
+CRITICAL - 2023-11-26 18:46:43 --> view(): Argument #2 ($data) must be of type array, string given, called in /opt/lampp/htdocs/SportClub/app/Views/InnerPages/template.php on line 18
+in SYSTEMPATH/Common.php on line 1178.
+ 1 APPPATH/Views/InnerPages/template.php(18): view('InnerPages/header.php', 'True')
+ 2 SYSTEMPATH/View/View.php(228): include('/opt/lampp/htdocs/SportClub/app/Views/InnerPages/template.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1190): CodeIgniter\View\View->render('InnerPages/template', [], true)
+ 5 APPPATH/Controllers/Home.php(15): view('InnerPages/template', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(942): App\Controllers\Home->index()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-26 18:46:46 --> view(): Argument #2 ($data) must be of type array, string given, called in /opt/lampp/htdocs/SportClub/app/Views/InnerPages/template.php on line 18
+in SYSTEMPATH/Common.php on line 1178.
+ 1 APPPATH/Views/InnerPages/template.php(18): view('InnerPages/header.php', 'True')
+ 2 SYSTEMPATH/View/View.php(228): include('/opt/lampp/htdocs/SportClub/app/Views/InnerPages/template.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1190): CodeIgniter\View\View->render('InnerPages/template', [], true)
+ 5 APPPATH/Controllers/Home.php(15): view('InnerPages/template', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(942): App\Controllers\Home->index()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-26 18:47:22 --> view(): Argument #2 ($data) must be of type array, string given, called in /opt/lampp/htdocs/SportClub/app/Views/InnerPages/template.php on line 18
+in SYSTEMPATH/Common.php on line 1178.
+ 1 APPPATH/Views/InnerPages/template.php(18): view('InnerPages/header.php', 'True')
+ 2 SYSTEMPATH/View/View.php(228): include('/opt/lampp/htdocs/SportClub/app/Views/InnerPages/template.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1190): CodeIgniter\View\View->render('InnerPages/template', [], true)
+ 5 APPPATH/Controllers/Home.php(15): view('InnerPages/template', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(942): App\Controllers\Home->index()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-26 18:47:23 --> view(): Argument #2 ($data) must be of type array, string given, called in /opt/lampp/htdocs/SportClub/app/Views/InnerPages/template.php on line 18
+in SYSTEMPATH/Common.php on line 1178.
+ 1 APPPATH/Views/InnerPages/template.php(18): view('InnerPages/header.php', 'True')
+ 2 SYSTEMPATH/View/View.php(228): include('/opt/lampp/htdocs/SportClub/app/Views/InnerPages/template.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1190): CodeIgniter\View\View->render('InnerPages/template', [], true)
+ 5 APPPATH/Controllers/Home.php(15): view('InnerPages/template', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(942): App\Controllers\Home->index()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-26 18:47:23 --> view(): Argument #2 ($data) must be of type array, string given, called in /opt/lampp/htdocs/SportClub/app/Views/InnerPages/template.php on line 18
+in SYSTEMPATH/Common.php on line 1178.
+ 1 APPPATH/Views/InnerPages/template.php(18): view('InnerPages/header.php', 'True')
+ 2 SYSTEMPATH/View/View.php(228): include('/opt/lampp/htdocs/SportClub/app/Views/InnerPages/template.php')
+ 3 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1190): CodeIgniter\View\View->render('InnerPages/template', [], true)
+ 5 APPPATH/Controllers/Home.php(15): view('InnerPages/template', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(942): App\Controllers\Home->index()
+ 7 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-26 21:42:38 --> Invalid file: "Pages/reclamation.php"
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Pages/reclamation.php')
+ 2 SYSTEMPATH/Common.php(1190): CodeIgniter\View\View->render('Pages/reclamation', [], true)
+ 3 APPPATH/Views/InnerPages/template.php(19): view('Pages/reclamation')
+ 4 SYSTEMPATH/View/View.php(228): include('/opt/lampp/htdocs/SportClub/app/Views/InnerPages/template.php')
+ 5 SYSTEMPATH/View/View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH/Common.php(1190): CodeIgniter\View\View->render('InnerPages/template', [], true)
+ 7 APPPATH/Controllers/Home.php(19): view('InnerPages/template', [...])
+ 8 SYSTEMPATH/CodeIgniter.php(942): App\Controllers\Home->reclamation()
+ 9 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+10 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
