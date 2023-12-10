@@ -77,15 +77,17 @@ class Auth extends BaseController
             $user = new UserModel();
             $username = $this->request->getPost('PseudoNom');
             $password = $this->request->getPost('Password');
-            $Cuser = $user->where('PseudoNom', $username)->first();
 
             if ($username === 'admin' && $password === 'admin') {
                 session()->set('PseudoNom', "admin");
                 return redirect()->to(base_url('/list-reclame'));
             }
+            $Cuser = $user->where('PseudoNom', $username)->first();
 
             if ($Cuser && password_verify($password, $Cuser['Password'])) {
                 session()->set('PseudoNom', $Cuser['PseudoNom']);
+                session()->set('Image', $Cuser['Image']);
+
                 return redirect()->to(base_url('/list-reclame'));
             }
             return redirect()->to(base_url('/sign-in'))->setStatusCode(404);

@@ -64,13 +64,20 @@ class ProfileController extends BaseController
     {
         if ($this->request->getMethod() === 'post') {
             $image = $this->request->getFile('profile_image');
-            $fileName = $image->getRandomName();
-            $image->move('./uploads/', $fileName);
-            $user = new UserModel();
-            $user->where('PseudoNom', session()->get('PseudoNom'))
-                ->set(['Image' => $fileName])
-                ->update();
-            return redirect()->back();
+
+            if ($image != null) {
+
+                $fileName = $image->getRandomName();
+                $image->move('./uploads/', $fileName);
+                session()->set('Image', $fileName);
+                $user = new UserModel();
+                $user->where('PseudoNom', session()->get('PseudoNom'))
+                    ->set(['Image' => $fileName])
+                    ->update();
+                return redirect()->back();
+            } else {
+                return redirect()->back();
+            }
         }
     }
 }

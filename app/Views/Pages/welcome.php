@@ -12,9 +12,9 @@
     <section class="md:container mx-auto md:mt-2  px-16 pb-4">
 
         <!-- Upcoming Events -->
-        <div class=" flex md:flex-row flex-col">
+        <div class=" flex md:flex-row flex-col justify-center">
             <?php if (!empty($events)) : ?>
-                <div class="flex flex-wrap justify-center space-x-2">
+                <div class="flex flex-wrap justify-center space-x-4 lg:space-x-6">
                     <?php foreach ($events as $event) : ?>
                         <div class="m-1 mb-2 flex flex-col items-center justify-center pt-4">
                             <img class="md:w-52 md:h-72 w-44 h-60 object-cover rounded-md" src="<?= base_url('uploads/' . $event['image']); ?>" alt="">

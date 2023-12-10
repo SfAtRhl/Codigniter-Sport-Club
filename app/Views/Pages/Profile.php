@@ -8,11 +8,11 @@
 
             <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                 <div class="sm:col-span-3">
-                    <form action="<?= base_url('/profile/upload_image') ?>" method="post" enctype="multipart/form-data" onsubmit="handleFormSubmission(event)">
+                    <form action="<?= base_url('/profile/upload_image') ?>" method="POST" enctype="multipart/form-data">
 
                         <div class="flex items-center my-6 text-center justify-center">
-                            <label for="profile-image" class="relative cursor-pointer">
-                                <input type="file" id="profile-image" name="profile_image" style="display: none;" accept="image/*">
+                            <label for="profile_image" class="relative cursor-pointer">
+                                <input type="file" id="profile_image" name="profile_image" style="display: none;" accept="image/*">
                                 <?php
                                 if ($data['Image'] == null) {
                                     echo ' <img src="img/images/img-2.jpg" alt="Profile Image" class="w-60 h-60 rounded-full object-cover mr-4" id="preview-image">';
@@ -41,14 +41,16 @@
                                     Update Image</button>
 
 
-                                <button class="mt-2 grow flex w-full justify-center rounded-md bg-red-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-red-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white-600" onclick="confirmDelete()">
-                                    Delete Account
-                                </button>
+
 
                             </div>
 
                         </div>
                     </form>
+                    <button class="mt-2 grow flex w-full justify-center rounded-md bg-red-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-red-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white-600" onclick="confirmDelete()">
+                        Delete Account
+                    </button>
+
                 </div>
                 <div class="sm:col-span-3">
                     <p class="mt-1 text-sm leading-6 text-gray-600 mb-2">"Enhance user information by updating the first and last names." </p>
@@ -110,9 +112,7 @@
         return true;
     }
 
-    function handleFormSubmission(event) {
-        event.preventDefault(); // Prevent the default form submission
-    }
+
 
     function confirmDelete() {
         Swal.fire({
@@ -130,7 +130,7 @@
             }
         });
     }
-    document.getElementById('profile-image').addEventListener('change', function(e) {
+    document.getElementById('profile_image').addEventListener('change', function(e) {
         var previewImage = document.getElementById('preview-image');
         var fileInput = e.target;
 

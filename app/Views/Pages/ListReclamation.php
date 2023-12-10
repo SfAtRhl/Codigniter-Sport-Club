@@ -41,7 +41,20 @@
                 <div class="bg-white border-2 border-orange-500 h-auto w-full rounded-md flex items-center justify-between px-4 gap-1 py-4">
                     <div class="md:w-24 w-12  text-center"><?= $reclam['DateReclamation'] ?></div>
                     <div class="w-48 sm:w-4/6 text-center "><?= $reclam['CorpReclamation'] ?></div>
-                    <div class="md:w-36 w-16 text-center"><?= $reclam['PseudoNom'] ?></div>
+                    <div class="md:w-36 w-16 flex text-center  justify-center md:flex-row flex-col  md:space-x-2 space-y-1  md:space-y-2">
+                        <?php
+
+                        if (session()->get('Image') == null && $reclam['PseudoNom'] == null) {
+                            echo '<img src="img/images/img-2.jpg" alt="Profile Image" class="w-12 h-12 rounded-full object-cover ">';
+                        } else   if (session()->get('Image') != null && session()->get('PseudoNom') != "admin") {
+
+                            echo ' <img src="' . base_url('uploads/' . session()->get('Image')) . '" alt="Profile Image" class="w-12 h-12 rounded-full object-cover ">';
+                        } else {
+                            echo ' <img src="' . base_url('uploads/' . $reclam['Image']) . '" alt="Profile Image" class="w-12 h-12 rounded-full object-cover ">';
+                        };
+                        echo '<div class="" >' . $reclam['PseudoNom'] . '</div>';
+
+                        ?></div>
                     <?php if (session()->get('PseudoNom') == "admin") : ?>
                         <div class="md:w-44 w-18 flex md:flex-row flex-col  md:space-x-2  ">
                             <button type="submit" class="flex w-full justify-center rounded-md bg-blue-300 md:px-3 md:py-1.5 px-1 md:text-sm font-semibold leading-6 text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white-600 ">

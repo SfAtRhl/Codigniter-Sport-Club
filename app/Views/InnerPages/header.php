@@ -2,7 +2,7 @@
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.2.0/dist/flowbite.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Mobile phone -->
-    <div id="toggle" class="z-4 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-32 dark:bg-gray-700 text-center">
+    <div id="toggle" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-32 dark:bg-gray-700 text-center">
         <ul class="py-2 text-xs md:text-md text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButtontoggle">
             <?php
             if (session()->get('PseudoNom') != null) {
@@ -20,7 +20,7 @@
                     echo '
                  <li class="menu-item  py-2 px-4 text-gray-800  "><a href="' . base_url('/reclame') . '" class="">Add Reclamation</a></li>
                 <li class="menu-item py-2 px-4 text-gray-800">
-                <a href="' . base_url('/profile') . ' class="">Profil</a>
+                <a href="' . base_url('/profile') . '">Profil</a>
                 </li>';
                     // . session()->get('PseudoNom')
                 }
@@ -45,6 +45,7 @@
         <button class="sm:hidden bg-transparent  text-orange-500 font-semibold  py-2 px-4 border border-orange-500 rounded" id="dropdownDefaultButtontoggle" data-dropdown-toggle="toggle">
             &#9776;
         </button>
+
         <!-- Dropdown menu -->
         <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
             <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
@@ -69,19 +70,33 @@
                 <?php endif; ?>
             </ul>
         </div>
-        <?php
-        if (session()->has('PseudoNom') && !empty(session('PseudoNom'))) {
-            echo ' <ul  class="hidden sm:flex space-x-4 text-sm md:text-base">
-           <button class="menu-item py-2 px-4 text-gray-800  " id="dropdownDefaultButton" data-dropdown-toggle="dropdown" type="button">Hello ' . session()->get('PseudoNom') . '</button>
+
+        <div class="hidden md:flex flex-row  ">
+            <?php
+            if (session()->has('PseudoNom') && !empty(session('PseudoNom'))) {
+                if (session()->get('PseudoNom') != "admin") {
+                    if (session()->get('Image') == null) {
+                        echo '<img src="img/images/img-2.jpg" alt="Profile Image" class=" w-12 h-12 rounded-full object-cover " >';
+                    } else {
+                        echo ' <img src="' . base_url('uploads/' . session()->get('Image')) . '" alt="Profile Image" class=" w-12 h-12 rounded-full object-cover " >';
+                    };
+                };
+                echo ' <button class="menu-item py-2 px-4 text-gray-800 mr-4 " id="dropdownDefaultButton" data-dropdown-toggle="dropdown" type="button">Hello ' . session()->get('PseudoNom') . '</button>';
+            }
+
+            if (session()->has('PseudoNom') && !empty(session('PseudoNom'))) {
+                echo '
+        <ul class="hidden sm:flex space-x-4 text-sm md:text-base">
+             
             <li class="menu-item border-2 border-orange-500 hover:bg-orange-500 hover:text-white rounded-md py-2 px-4 text-gray-800  "><a href="' . base_url('logout') . '" class="">logout</a></li>
         </ul>';
-        } else {
+            } else {
 
-            echo ' <ul  class="hidden sm:flex space-x-4 text-sm md:text-base ">
+                echo ' <ul class="hidden sm:flex space-x-4 text-sm md:text-base ">
             <li class="menu-item border-2 border-orange-500 hover:bg-orange-500 rounded-md py-2 px-4 text-gray-800 hover:text-white "><a href="' . base_url('sign-in') . '" class="">Sign In</a></li>
             <li class="menu-item border-2 border-orange-500 hover:bg-orange-500 rounded-md py-2 px-4 text-gray-800  hover:text-white"><a href="' . base_url('sign-up') . '" class="">Sign Up</a></li>
-        </ul>';
-        } ?>
-    </div>
+        </ul></div>';
+            } ?>
+        </div>
 
 </header>

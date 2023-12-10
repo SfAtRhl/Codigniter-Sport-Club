@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\ReclamationModel;
+use App\Models\UserModel;
 
 class ReclamationController extends BaseController
 {
@@ -47,9 +48,19 @@ class ReclamationController extends BaseController
     {
         $data = [];
         $Reclam = new ReclamationModel();
+        $user = new UserModel();
+
         $session = session()->get('PseudoNom');
         if ($session == "admin") {
-            $data['data'] = $Reclam->where('Status','Pending')->findAll();
+            // $Reclam = new ReclamationModel();
+            // $user = new UserModel();
+            // join($user, $user->PseudoNom == $Reclam->PseudoNom)->
+            $data['data'] =
+                $Reclam->select('*')
+                ->join('utilisateurs', 'utilisateurs.PseudoNom = reclamation.PseudoNom', 'left')
+                ->where('reclamation.Status', 'Pending')
+                ->findAll();
+            // $Reclam->where('Status', 'Pending')->findAll();
         } else {
             $data['data'] = $Reclam->where('PseudoNom', $session)->findAll();
         }
