@@ -1,0 +1,10 @@
+ <div class="flex flex-wrap justify-center">
+                <?php
+                for ($i = 1; $i <= 6; $i++)
+                    echo '<div class="m-1 mb-2 text-center">
+                    <img src="img/images/event' . $i . '.jpg" alt="" class="h-64 rounded-lg shadow-lg">
+                    <h3 class="text-sm font-semibold mt-1 ">Game Day: [Event Name]</h3>
+                    <p class="text-xs">Date: [Event Date]</p>
+                    <p class="text-xs">Venue: [Event Venue]</p>
+                </div> ' ?>
+            </div>

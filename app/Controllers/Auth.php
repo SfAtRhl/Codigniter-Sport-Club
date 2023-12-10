@@ -88,7 +88,7 @@ class Auth extends BaseController
                 session()->set('PseudoNom', $Cuser['PseudoNom']);
                 return redirect()->to(base_url('/list-reclame'));
             }
-            return redirect()->to(base_url('/'))->with('session', ['error' => 'Nom d\'utilisateur ou mot de passe incorrect']);
+            return redirect()->to(base_url('/sign-in'))->setStatusCode(404);
         }
     }
     public function logout()

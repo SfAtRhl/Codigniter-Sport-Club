@@ -52,6 +52,10 @@ class CreateUtilisateursTable extends Migration
                 'type' => 'VARCHAR',
                 'constraint' => 255,
             ],
+            'Image' => [
+                'type' => 'VARCHAR',
+                'constraint' => 255,
+            ],
         ]);
 
         $this->forge->addKey('PseudoNom', true);

@@ -12,7 +12,9 @@
     "require": {
         "php": "^7.4 || ^8.0",
         "codeigniter4/framework": "^4.0",
-        "phpmailer/phpmailer": "^6.9"
+        "dompdf/dompdf": "^2.0",
+        "phpmailer/phpmailer": "^6.9",
+        "phpoffice/phpspreadsheet": "^1.23"
     },
     "require-dev": {
         "mikey179/vfsstream": "^1.6",
@@ -31,7 +33,10 @@
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
-        "sort-packages": true
+        "sort-packages": true,
+         "platform": {
+            "php": "8.0"
+        }
     },
     "scripts": {
         "test": "phpunit"

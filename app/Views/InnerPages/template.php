@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/output.css">
 </head>
 
-<body class="font-sans bg-gray-100 no-scro">
+<body class="font-sans bg-gray-100 no-scrollbar">
     <?php
     echo view('InnerPages/header.php');
     echo view($main_content);

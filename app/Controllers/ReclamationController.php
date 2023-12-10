@@ -78,7 +78,6 @@ class ReclamationController extends BaseController
         echo view('InnerPages/template_date', $data);
     }
 
-
     public function update($id)
     {
         $model = new ReclamationModel();

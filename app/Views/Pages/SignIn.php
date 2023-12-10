@@ -4,7 +4,7 @@
     </div>
 
     <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-        <form class="space-y-6" action="<?= base_url('/login') ?>" method="POST">
+        <form id="login_form" class="space-y-6" action="<?= base_url('/login') ?>" method="POST">
             <?= csrf_field() ?>
 
             <div>
@@ -37,3 +37,64 @@
         </p>
     </div>
 </div>
+
+<script>
+    const login_form = document.getElementById('login_form');
+
+    login_form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const username = document.getElementById('PseudoNom').value;
+        const password = document.getElementById('Password').value;
+
+        try {
+            const response = await fetch(login_form.action, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams({
+                    PseudoNom: username,
+                    Password: password, 
+                    <?= csrf_token() ?>: '<?= csrf_hash() ?>',
+                }),
+            });
+
+            if (response.status == 200) {
+                // Success case
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 1000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.onmouseenter = Swal.stopTimer;
+                        toast.onmouseleave = Swal.resumeTimer;
+                    }
+                });
+
+                Toast.fire({
+                    icon: 'success',
+                    title: 'Signed in successfully'
+                }).then(() => {
+                    login_form.submit();
+                });
+            } else {
+                // Error case
+                const errorData = await response.json();
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Invalid credentials. Please try again.',
+                    showCancelButton: false,
+                    showConfirmButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "OK",
+                });
+            }
+        } catch (error) {
+            console.error('Error during login:', error);
+        }
+    });
+</script>

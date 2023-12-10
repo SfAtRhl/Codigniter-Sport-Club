@@ -17,7 +17,8 @@ class UserModel extends Model
         'Profession',
         'DateNaissance',
         'Password',
-        'Email'
+        'Email',
+        'Image'
     ];
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
